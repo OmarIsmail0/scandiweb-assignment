@@ -12,7 +12,6 @@ const ProductList = () => {
     getProducts()
       .then((e) => {
         setData(e.data);
-        console.log(e);
       })
       .catch((e) => console.log(e));
   }
