@@ -17,28 +17,6 @@ class Product extends Database
         return $this->db->resultSet();
     }
 
-    protected function setProduct($sku, $name, $price, $weight, $size, $length, $width, $height, $productType)
-    {
-        var_dump("Product");
-        $sql = "INSERT INTO products(sku, name, price, weight, size, length, width, height, productType)
-                VALUES(:sku, :name, :price, :weight, :size, :length, :width, :height, :productType)";
-        $this->db->query($sql);
-        foreach (array(
-            "sku" => $sku,
-            "name" => $name,
-            "price" => $price,
-            "weight" => $weight,
-            "size" => $size,
-            "length" => $length,
-            "width" => $width,
-            "height" => $height,
-            "productType"  => $productType
-        ) as $propName => $propValue) {
-            $this->db->bind(':' . $propName, $propValue);
-        }
-        $this->db->execute();
-    }
-
     protected function setBook($sku, $name, $price, $weight, $productType)
     {
         $sql = "INSERT INTO products(sku, name, price, weight, productType)

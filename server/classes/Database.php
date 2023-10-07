@@ -48,7 +48,8 @@ class Database
     // Prepare Statement with Query
     public function query($query)
     {
-        $this->stmt = $this->connection->prepare($query);
+        if ($this->isConnected())
+            $this->stmt = $this->connection->prepare($query);
     }
 
     // Execute the Prepared Statment
@@ -60,8 +61,10 @@ class Database
     // Get Resulut set as Array of Objects
     public function resultSet()
     {
-        $this->execute();
-        return $this->stmt->fetchAll(PDO::FETCH_OBJ);
+        if ($this->isConnected()) {
+            $this->execute();
+            return $this->stmt->fetchAll(PDO::FETCH_OBJ);
+        }
     }
 
     // Get Record Row Count

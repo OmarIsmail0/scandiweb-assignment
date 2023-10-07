@@ -9,9 +9,10 @@ const ProductList = () => {
   const [checkedList, setCheckedList] = useState();
 
   function setProducts() {
-    getProducts().then((e) => setData(e.data));
+    getProducts()
+      .then((e) => setData(e.data))
+      .catch((e) => console.log(e));
   }
-
   useMemo(() => {
     setProducts();
   }, []);
