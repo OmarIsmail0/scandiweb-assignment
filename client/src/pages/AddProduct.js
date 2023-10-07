@@ -30,7 +30,7 @@ const AddProduct = () => {
     if (data.some((product) => product.sku === values.sku)) {
       setErrorMsg("this sku product already exists");
       setValid("error");
-      toast.error(errorMsg, {
+      toast.error("this sku product already exists", {
         position: "bottom-right",
         autoClose: 5000,
         hideProgressBar: false,

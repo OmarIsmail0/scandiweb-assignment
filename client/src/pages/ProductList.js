@@ -16,7 +16,7 @@ const ProductList = () => {
       })
       .catch((e) => console.log(e));
   }
-  console.log(data);
+
   useMemo(() => {
     setProducts();
   }, []);
