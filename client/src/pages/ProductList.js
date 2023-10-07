@@ -10,9 +10,13 @@ const ProductList = () => {
 
   function setProducts() {
     getProducts()
-      .then((e) => setData(e.data))
+      .then((e) => {
+        setData(e.data);
+        console.log(e);
+      })
       .catch((e) => console.log(e));
   }
+  console.log(data);
   useMemo(() => {
     setProducts();
   }, []);

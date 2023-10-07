@@ -12,14 +12,15 @@ class Product extends Database
 
     protected function getProducts()
     {
-        $sql = "SELECT * FROM products";
+        $sql = "SELECT * FROM product";
         $this->db->query($sql);
         return $this->db->resultSet();
     }
 
+
     protected function setBook($sku, $name, $price, $weight, $productType)
     {
-        $sql = "INSERT INTO products(sku, name, price, weight, productType)
+        $sql = "INSERT INTO product(sku, name, price, weight, productType)
                  VALUES (:sku, :name, :price, :weight, :productType)";
         $this->db->query($sql);
         foreach (array(
@@ -36,7 +37,7 @@ class Product extends Database
 
     protected function setDvd($sku, $name, $price, $size, $productType)
     {
-        $sql = "INSERT INTO products(sku, name, price, size, productType) 
+        $sql = "INSERT INTO product(sku, name, price, size, productType) 
         VALUES (:sku, :name, :price, :size, :productType)";
         $this->db->query($sql);
         $this->db->query($sql);
@@ -54,7 +55,7 @@ class Product extends Database
 
     protected function setFurniture($sku, $name, $price, $length, $width, $height, $productType)
     {
-        $sql = "INSERT INTO products(sku, name, price, length, width, height, productType)
+        $sql = "INSERT INTO product(sku, name, price, length, width, height, productType)
          VALUES (:sku, :name, :price, :length, :width, :height, :productType)";
         $this->db->query($sql);
         $this->db->query($sql);
@@ -74,7 +75,7 @@ class Product extends Database
 
     protected function deleteProduct($sku)
     {
-        $sql = "DELETE FROM products WHERE sku = :sku";
+        $sql = "DELETE FROM product WHERE sku = :sku";
         $this->db->query($sql);
         $this->db->bind(':sku', $sku);
         $this->db->execute();

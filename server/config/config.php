@@ -1,7 +1,7 @@
 <?php
 // define("DB_HOST", "id20546340_juniortest_db"); 
 // define("DB_USER", "id20546340_root"); 
-// define("DB_PWD", "CX@x+MCptnHNW%5D");
+// define("DB_PWD", "T8RS%m7B#hFy&Ws*");
 // define("DB_NAME", "id20546340_juniortest_db");
 
 define("DB_HOST", "localhost");
